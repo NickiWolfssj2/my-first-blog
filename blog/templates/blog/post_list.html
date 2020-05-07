@@ -4,17 +4,11 @@
     {% for post in posts %}
                         <div class="post">
                             <div class="date">
-                                <p>Publicado: 29-04-2020, 21:27</p>
+                                <p>{{ post.published_date }}</p>
                             </div>
-                            <h2><a href="{% url 'post_detail' pk=post.pk %}">Mi primer post</a></h2>
-                            <p>Tot va molt bé,els exercicis d'Ofimatica van de maravella ,pero hi ha quasi tot no ho entent pero practicant s'entendra,aixo crec</p>
+                            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                            <p>{{ post.text|linebreaksbr }}</p>
                         </div>
-                        <div>
-                            <p>Publicado: 29-04-2020, 21:27</p>
-                            <h2><a href="">Mi segon post</a></h2>
-                            <p>Buff,despres de tornar al exercicis hem vaig perdre i no savia com tornar on estaba amb algunos complicacions,igualment vaig tornar a llegir de nou i vaig comprendre que no feia falta el bash console per activar la pagina web(esper que el necesitem per els següents exercicis per que no se com activar la virtualnv). </p>
-                            </div>
-                            <div>FÍ</div>
-                        </div>
+                        
                     {% endfor %}
 {% endblock %}

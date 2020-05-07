@@ -7,6 +7,9 @@
                 Publicado: 30-04-2020, 17:23
             </div>
         {% endif %}
+        {% if user.is_authenticated %}
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
         <h2>Buenas</h2>
         <p>Provat 1,2,3</p>
     </div>
